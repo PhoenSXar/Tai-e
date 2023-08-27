@@ -49,7 +49,12 @@ public class ClassType implements ReferenceType {
 
     public JClass getJClass() {
         if (jclass == null) {
-            jclass = loader.loadClass(name);
+            JClass loaded = loader.loadClass(name);
+            if (loaded != null) {
+                jclass = loaded;
+            } else {
+                System.out.println("null: " + name);
+            }
         }
         return jclass;
     }

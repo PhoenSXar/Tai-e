@@ -151,3 +151,10 @@
 - description: find the method that may drop or ignore exceptions
   analysisClass: pascal.taie.analysis.bugfinder.DroppedException
   id: dropped-exception
+
+- description: symbolic execution
+  analysisClass: pascal.taie.analysis.symbolic.execution.SEBuilder
+  id: se
+  requires: [ icfg ]
+
+
